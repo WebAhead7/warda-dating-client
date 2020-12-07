@@ -30,16 +30,11 @@ function Login() {
       body: JSON.stringify(data),
     })
       .then((response) => {
-        response.json();
+        return response.json();
       })
       .then((response) => {
-        console.log(response);
-        const objData = {
-          userName: data.email,
-          auth: response,
-        };
-        if (objData.userName && objData.auth) {
-          window.localStorage.setItem(localStorageKey, objData.auth);
+        if (response.token) {
+          window.localStorage.setItem(localStorageKey, response.token);
 
           history.push("/NewFeeds");
         } else {

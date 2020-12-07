@@ -1,19 +1,30 @@
 import React from "react";
 import { serverUrl } from "../utilis/utilis";
+import { localStorageKey } from "../utilis/utilis";
 
 function NewFeeds() {
   const [postsData, setPostsData] = React.useState([]);
-  const data = JSON.parse(localStorage.getItem("warda"));
+  const auth = window.localStorage.getItem(localStorageKey);
   React.useEffect(() => {
     fetch(serverUrl + "/posts", {
       method: "GET",
       headers: {
-        Authorization: data.auth.access_token,
+        "x-auth-token": auth,
       },
     })
       .then((response) => response.json())
-      .then((response) => setPostsData(response))
-      .catch((err) => console.log(err));
+      .then((response) => {
+        if (response && response.length > 0) {
+          setPostsData(response);
+        } else {
+          alert("Something went wrong polz try again later ");
+          console.log(response);
+        }
+      })
+      .catch((err) => {
+        alert("Something went wrong polz try again later ");
+        console.log(err);
+      });
   }, []);
 
   return (
