@@ -7,12 +7,10 @@ function Login() {
   const history = useHistory();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [loggedIn, setLoggedIn] = React.useState(false);
 
   React.useEffect(() => {
     const auth = window.localStorage.getItem(localStorageKey);
     if (auth) {
-      setLoggedIn(true);
       history.push("/NewFeeds");
     }
   }, []);
