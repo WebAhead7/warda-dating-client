@@ -42,6 +42,8 @@ function InoutPostContainer(props) {
         type="text"
         required
         value={title}
+        placeholder="title"
+        className="input_data_title"
         onChange={(event) => setTitle(event.target.value)}
       ></input>
       <br></br>
@@ -49,6 +51,8 @@ function InoutPostContainer(props) {
         type="text"
         required
         value={content}
+        className="input_data"
+        placeholder="your post"
         onChange={(event) => setContent(event.target.value)}
       ></input>
       <button onClick={addPost}>Add Post</button>

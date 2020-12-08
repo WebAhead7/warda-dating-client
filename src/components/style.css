@@ -1,0 +1,44 @@
+.post_container {
+  background: #eeeff1;
+  width: 50%;
+}
+.user_name {
+  padding: 10px;
+  color: rgb(13, 81, 139);
+}
+.title_post {
+  padding: 10px;
+
+  color: #b80d3b;
+}
+.content_post {
+  padding: 10px;
+
+  color: #b80d3b;
+}
+
+.logout_button {
+  background-color: blue;
+  color: wheat;
+  margin: 10px;
+}
+.input_data {
+  width: 50%;
+  height: 100px;
+  margin: 10px;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.input_data_title {
+  width: 20%;
+  height: 50px;
+  margin: 10px;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.gender_img {
+  width: 50px;
+  height: 50px;
+}

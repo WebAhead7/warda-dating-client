@@ -1,6 +1,7 @@
 import React from "react";
 import { serverUrl } from "../utilis/utilis";
 import { localStorageKey } from "../utilis/utilis";
+import "./style.css";
 
 function PostContainer(props) {
   const auth = window.localStorage.getItem(localStorageKey);
@@ -15,7 +16,7 @@ function PostContainer(props) {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        setUser(response);
       })
       .catch((err) => {
         // alert("Something went wrong polz try again later ");
@@ -23,10 +24,17 @@ function PostContainer(props) {
       });
   }, []);
   return (
-    <div key={props.id}>
-      <h1>{user.userName}</h1>
-      <h3>{props.title}</h3>
-      <h3>{props.content}</h3>
+    <div key={props.id} className="post_container">
+      <h1 className="user_name">{user.name} :</h1>
+
+      {user.gender === "male" ? (
+        <img className="gender_img" src="images/mars.png"></img>
+      ) : (
+        <img className="gender_img" src="images/femenine.png"></img>
+      )}
+
+      <h3 className="title_post">{props.title}</h3>
+      <h3 className="content_post">{props.content}</h3>
     </div>
   );
 }

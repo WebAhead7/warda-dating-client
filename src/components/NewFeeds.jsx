@@ -4,6 +4,7 @@ import { localStorageKey } from "../utilis/utilis";
 import PostContainer from "./Postcontainer";
 import InoutPostContainer from "./InoutPostContainer";
 import { Link, useHistory } from "react-router-dom";
+import "./style.css";
 
 function NewFeeds(props) {
   const [postsData, setPostsData] = React.useState([]);
@@ -42,21 +43,15 @@ function NewFeeds(props) {
 
   return (
     <div>
-      <div className="massegeBox">
-        <button onClick={logOut}>LogOut</button>
-        <h3>Write your post here</h3>
-        <InoutPostContainer dataAdded={setdataAdded}></InoutPostContainer>
-        <div>
-          <button type="buttom">All Posts</button>
-        </div>
-        <div>
-          <button type="buttom">Male Posts</button>
-        </div>
-        <div>
-          <button type="buttom">Female Posts</button>
-        </div>
+      <div>
+        <button onClick={logOut} className="logout_button">
+          LogOut
+        </button>
+        {}
 
-        <div className="posts-array">
+        <InoutPostContainer dataAdded={setdataAdded}></InoutPostContainer>
+
+        <div>
           <ul>
             {postsData.length
               ? postsData.map((data) => (
