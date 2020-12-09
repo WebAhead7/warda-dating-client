@@ -38,7 +38,7 @@ function InoutPostContainer(props) {
   }
 
   return (
-    <div>
+    <div className="content-post">
       <input
         type="text"
         required

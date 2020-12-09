@@ -47,21 +47,21 @@ function NewFeeds(props) {
         <button onClick={logOut} className="logout_button">
           LogOut
         </button>
-        {}
+        { }
 
         <InoutPostContainer dataAdded={setdataAdded}></InoutPostContainer>
 
-        <div>
-          <ul>
+        <div >
+          <ul className="posts-content">
             {postsData.length
               ? postsData.map((data) => (
-                  <PostContainer
-                    key={data.id}
-                    content={data.content}
-                    title={data.title}
-                    userID={data.user}
-                  ></PostContainer>
-                ))
+                <PostContainer
+                  key={data.id}
+                  content={data.content}
+                  title={data.title}
+                  userID={data.user}
+                ></PostContainer>
+              ))
               : null}
           </ul>
         </div>
