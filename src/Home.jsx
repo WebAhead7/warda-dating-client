@@ -2,7 +2,7 @@ import React from "react";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { Link, useHistory } from "react-router-dom";
-
+import "./Home.css";
 import { localStorageKey } from "./utilis/utilis";
 
 const Home = () => {
@@ -14,12 +14,12 @@ const Home = () => {
   }
   return (
     <div>
-      <h2>The best website to meat your life partner and make Looooove</h2>
-      <div className="buttoms">
-        <Link to="Login">
+      <h2 className="h2-title">The best website to meat your life partner and make Looooove</h2>
+      <div className="buttoms" >
+        <Link to="Login" className="login-buttom">
           <button className="Login-style">Login</button>
         </Link>
-        <Link to="Register">
+        <Link to="Register" className="register-buttom">
           <button className="Register-style">Register</button>
         </Link>
         {/* <NewFeeds className="Feeds-style">NewFeeds</NewFeeds> */}

@@ -34,6 +34,7 @@ function InoutPostContainer(props) {
         setContent("");
         console.log(err);
       });
+
   }
 
   return (

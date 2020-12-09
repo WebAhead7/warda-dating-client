@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { serverUrl } from "../utilis/utilis";
 import { localStorageKey } from "../utilis/utilis";
+import "./Login.css"
 
 function Login() {
   const history = useHistory();
@@ -46,7 +47,7 @@ function Login() {
   }
   return (
     <div>
-      <h1>Please login</h1>
+      <h1 className="title">Please login</h1>
       <div>
         <span>Enter your Email</span>
         <input
